@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Augusta Downtown Alliance — Downtown Augusta, Maine</title>
+<style>
+  :root {
+    --green: #004d2a;
+    --green-dark: #00331c;
+    --green-light: #e7f0ea;
+    --gold: #c9a34e;
+    --ink: #1b1f1d;
+    --paper: #ffffff;
+    --muted: #5b665f;
+    --radius: 10px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.55;
+  }
+  h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; margin: 0 0 .4em; line-height: 1.15; }
+  a { color: var(--green); }
+  img, svg { max-width: 100%; }
+  .skip-link {
+    position: absolute; left: -999px; top: 0; background: var(--green); color: #fff;
+    padding: .6em 1em; z-index: 100;
+  }
+  .skip-link:focus { left: 0; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.25rem; }
+  header.site {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--paper);
+    border-bottom: 1px solid #e3e6e4;
+  }
+  .nav-row { display: flex; align-items: center; justify-content: space-between; padding: .75rem 0; }
+  .brand { display: flex; align-items: center; gap: .6rem; font-family: Georgia, serif; font-weight: 700; font-size: 1.15rem; color: var(--green); text-decoration: none; }
+  .brand-mark {
+    width: 40px; height: 40px; border-radius: 50%; background: var(--green);
+    color: #fff; display: flex; align-items: center; justify-content: center;
+    font-family: Georgia, serif; font-weight: 700; font-size: .95rem; flex: none;
+  }
+  nav.primary ul { list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; }
+  nav.primary a { text-decoration: none; color: var(--ink); font-size: .95rem; font-weight: 600; }
+  nav.primary a:hover, nav.primary a:focus { color: var(--green); text-decoration: underline; }
+  .donate-btn {
+    background: var(--green); color: #fff !important; padding: .5rem 1rem; border-radius: 999px;
+    font-weight: 700; text-decoration: none !important; font-size: .9rem;
+  }
+  .nav-toggle { display: none; }
+  .hamburger {
+    display: none; background: none; border: 1px solid var(--green); border-radius: 6px;
+    padding: .4rem .6rem; font-size: 1.1rem; color: var(--green); cursor: pointer;
+  }
+  .hero {
+    background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+    color: #fff; padding: 4.5rem 0 3.5rem; text-align: center;
+  }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: .3rem; }
+  .hero p.sub { font-size: 1.25rem; color: #d9ead8; max-width: 40em; margin: 0 auto 1.75rem; }
+  .hero .cta-row { display: flex; gap: .9rem; justify-content: center; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: .7rem 1.5rem; border-radius: 999px; font-weight: 700; text-decoration: none; }
+  .btn-primary { background: var(--gold); color: var(--green-dark); }
+  .btn-outline { border: 2px solid #fff; color: #fff; }
+  .btn-outline:hover { background: rgba(255,255,255,.12); }
+  .stats { background: var(--green-light); padding: 2.5rem 0; }
+  .stats-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: center;
+  }
+  .stat-num { font-family: Georgia, serif; font-size: 2rem; color: var(--green); font-weight: 700; }
+  .stat-label { font-size: .85rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+  section { padding: 3.5rem 0; }
+  .section-title { text-align: center; margin-bottom: 2rem; }
+  .section-title h2 { font-size: 2rem; color: var(--green-dark); }
+  .section-title .kicker { color: var(--gold); text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; font-weight: 700; }
+  .mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .card {
+    background: var(--green-light); border-radius: var(--radius); padding: 1.75rem;
+    border-left: 4px solid var(--green);
+  }
+  .card h3 { color: var(--green-dark); font-size: 1.1rem; }
+  .card p { color: var(--ink); font-style: italic; margin: 0; }
+  .recognition {
+    background: var(--green-dark); color: #fff; text-align: center; padding: 2.25rem 1rem;
+    border-radius: var(--radius);
+  }
+  .recognition strong { color: var(--gold); }
+  .leadership { display: flex; gap: 1.75rem; align-items: center; flex-wrap: wrap; }
+  .leader-photo {
+    width: 96px; height: 96px; border-radius: 50%; background: var(--green);
+    color: #fff; display: flex; align-items: center; justify-content: center;
+    font-family: Georgia, serif; font-size: 1.6rem; font-weight: 700; flex: none;
+  }
+  .leader-info h3 { margin-bottom: .1rem; }
+  .leader-info .role { color: var(--muted); font-size: .95rem; }
+  .events-card {
+    border: 1px solid #e3e6e4; border-radius: var(--radius); padding: 2rem; text-align: center;
+    background: #fafbfa;
+  }
+  .events-card h3 { color: var(--green-dark); }
+  .events-card p { color: var(--muted); max-width: 34em; margin: .5rem auto 1.25rem; }
+  .cta-band { background: var(--green); color: #fff; text-align: center; padding: 3rem 0; }
+  .cta-band h2 { font-size: 1.8rem; margin-bottom: .5rem; }
+  .cta-band .cta-row { display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap; }
+  footer.site { background: var(--green-dark); color: #cfe0d3; padding: 2.5rem 0 1.5rem; font-size: .9rem; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; margin-bottom: 1.5rem; }
+  .footer-grid h4 { color: #fff; font-size: .9rem; margin-bottom: .6rem; }
+  .footer-grid a { color: #cfe0d3; text-decoration: none; display: block; margin-bottom: .4rem; }
+  .footer-grid a:hover { color: #fff; text-decoration: underline; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,.15); padding-top: 1rem; text-align: center; color: #9db9a4; font-size: .8rem; }
+  @media (max-width: 820px) {
+    .mission-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr; }
+    nav.primary { display: none; width: 100%; }
+    .nav-toggle:checked ~ nav.primary { display: block; }
+    .nav-toggle:checked ~ nav.primary ul { flex-direction: column; gap: .25rem; padding: 1rem 0; }
+    .hamburger { display: inline-block; }
+    .nav-row { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site">
+  <div class="wrap nav-row">
+    <a class="brand" href="#top" aria-label="Augusta Downtown Alliance home">
+      <span class="brand-mark" aria-hidden="true">ADA</span>
+      Augusta Downtown Alliance
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+    <label for="nav-toggle" class="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">&#9776;</label>
+    <nav class="primary" aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#businesses">Businesses</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="donate-btn" href="#donate">Donate Today</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap">
+      <h1>Downtown Augusta, Maine</h1>
+      <p class="sub">The beating heart of Maine's capital city — a thriving, walkable downtown for the people who live, work, shop, and gather here.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#businesses">Explore Downtown Businesses</a>
+        <a class="btn btn-outline" href="#contact">Get Involved</a>
+      </div>
+    </div>
+  </section>
+  <div class="stats">
+    <div class="wrap stats-grid">
+      <div>
+        <div class="stat-num">150+</div>
+        <div class="stat-label">Local Partnerships</div>
+      </div>
+      <div>
+        <div class="stat-num">250+</div>
+        <div class="stat-label">Events Coordinated</div>
+      </div>
+      <div>
+        <div class="stat-num">$27M+</div>
+        <div class="stat-label">New Investment</div>
+      </div>
+      <div>
+        <div class="stat-num">2011</div>
+        <div class="stat-label">Founded · Accredited Main Street 2013</div>
+      </div>
+    </div>
+  </div>
+  <section id="about">
+    <div class="wrap">
+      <div class="section-title">
+        <div class="kicker">Who We Are</div>
+        <h2>A volunteer-powered alliance for downtown Augusta</h2>
+      </div>
+      <div class="mission-grid">
+        <div class="card">
+          <h3>Our Mission</h3>
+          <p>"The Augusta Downtown Alliance fosters a vibrant, welcoming community by enhancing the economic, cultural, and social vitality of downtown Augusta."</p>
+        </div>
+        <div class="card">
+          <h3>Our Vision</h3>
+          <p>"The thriving heart of our region — a welcoming, walkable, and economically vibrant destination where people live, work, shop, dine, and gather."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="businesses">
+    <div class="wrap">
+      <div class="recognition">
+        <p style="margin:0; font-size:1.1rem;">Named one of <strong>DownEast Magazine's Best Places to Live</strong> (2020) — downtown Augusta is a 501(c)(3) nonprofit built by residents, merchants, property owners, and volunteers across four active committees.</p>
+      </div>
+    </div>
+  </section>
+  <section id="leadership" style="background: var(--green-light);">
+    <div class="wrap">
+      <div class="section-title">
+        <div class="kicker">Leadership</div>
+        <h2>Board President</h2>
+      </div>
+      <div class="leadership">
+        <div class="leader-photo" aria-hidden="true">LB</div>
+        <div class="leader-info">
+          <h3>Laura Briggs</h3>
+          <p class="role">Board President, Augusta Downtown Alliance · Director of Operations, Bread of Life</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="events">
+    <div class="wrap">
+      <div class="section-title">
+        <div class="kicker">Stay Connected</div>
+        <h2>Upcoming Events</h2>
+      </div>
+      <div class="events-card">
+        <h3>New events are posted here as they're scheduled</h3>
+        <p>Stay connected with everything happening in downtown Augusta — when you participate, you help us keep our city thriving, beautiful, and welcoming. Check the full calendar for the latest listings, or follow us on social media for real-time updates.</p>
+        <a class="btn btn-primary" href="#">View Full Events Calendar</a>
+      </div>
+    </div>
+  </section>
+  <div class="cta-band" id="donate">
+    <div class="wrap">
+      <h2>Help keep downtown Augusta thriving</h2>
+      <p>Every gift supports the events, beautification, and business support that make downtown Augusta a place people choose to be.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#">Donate Today</a>
+        <a class="btn btn-outline" href="#contact">For Businesses</a>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="site" id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Augusta Downtown Alliance</h4>
+        <p style="max-width: 32em; color: #b9cdbd;">A 501(c)(3) nonprofit fostering the economic, cultural, and social vitality of downtown Augusta, Maine since 2011.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+12074589551">(207) 458-9551</a>
+        <a href="#">PO Box 2066, Augusta, ME 04338</a>
+        <a href="#">Contact form</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">X</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; Augusta Downtown Alliance. All rights reserved. &mdash; Concept rebuild for review purposes; not a live site.
+    </div>
+  </div>
+</footer>
+</body>
+</html>
