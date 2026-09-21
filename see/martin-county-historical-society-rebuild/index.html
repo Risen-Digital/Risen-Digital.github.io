@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Martin County Historical Society & Museum — Shoals, Indiana</title>
+<style>
+  :root {
+    --maroon: #6b1f27;
+    --maroon-dark: #4a151b;
+    --maroon-light: #f2e6e7;
+    --gold: #b48a3f;
+    --ink: #1b1f1d;
+    --paper: #ffffff;
+    --muted: #5c6560;
+    --radius: 10px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.55;
+  }
+  h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; margin: 0 0 .4em; line-height: 1.15; }
+  a { color: var(--maroon); }
+  img, svg { max-width: 100%; }
+  .skip-link {
+    position: absolute; left: -999px; top: 0; background: var(--maroon); color: #fff;
+    padding: .6em 1em; z-index: 100;
+  }
+  .skip-link:focus { left: 0; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.25rem; }
+  header.site {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--paper);
+    border-bottom: 1px solid #e3e6e4;
+  }
+  .nav-row { display: flex; align-items: center; justify-content: space-between; padding: .75rem 0; }
+  .brand { display: flex; align-items: center; gap: .6rem; font-family: Georgia, serif; font-weight: 700; font-size: 1.1rem; color: var(--maroon); text-decoration: none; }
+  .brand-mark {
+    width: 40px; height: 40px; border-radius: 50%; background: var(--maroon);
+    color: #fff; display: flex; align-items: center; justify-content: center;
+    font-family: Georgia, serif; font-weight: 700; font-size: .85rem; flex: none;
+  }
+  nav.primary ul { list-style: none; display: flex; gap: 1.4rem; margin: 0; padding: 0; }
+  nav.primary a { text-decoration: none; color: var(--ink); font-size: .92rem; font-weight: 600; }
+  nav.primary a:hover, nav.primary a:focus { color: var(--maroon); text-decoration: underline; }
+  .donate-btn {
+    background: var(--maroon); color: #fff !important; padding: .5rem 1rem; border-radius: 999px;
+    font-weight: 700; text-decoration: none !important; font-size: .88rem;
+  }
+  .nav-toggle { display: none; }
+  .hamburger {
+    display: none; background: none; border: 1px solid var(--maroon); border-radius: 6px;
+    padding: .4rem .6rem; font-size: 1.1rem; color: var(--maroon); cursor: pointer;
+  }
+  .hero {
+    background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-dark) 100%);
+    color: #fff; padding: 4.2rem 0 3.2rem; text-align: center;
+  }
+  .hero h1 { font-size: clamp(1.9rem, 5vw, 3rem); margin-bottom: .3rem; }
+  .hero p.sub { font-size: 1.2rem; color: #f0dcda; max-width: 40em; margin: 0 auto 1.6rem; }
+  .hero .cta-row { display: flex; gap: .9rem; justify-content: center; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: .7rem 1.5rem; border-radius: 999px; font-weight: 700; text-decoration: none; }
+  .btn-primary { background: var(--gold); color: var(--maroon-dark); }
+  .btn-outline { border: 2px solid #fff; color: #fff; }
+  .btn-outline:hover { background: rgba(255,255,255,.12); }
+  .status-band { background: var(--maroon-light); padding: 1.4rem 0; text-align: center; }
+  .status-band strong { color: var(--maroon-dark); }
+  section { padding: 3.2rem 0; }
+  .section-title { text-align: center; margin-bottom: 1.8rem; }
+  .section-title h2 { font-size: 1.9rem; color: var(--maroon-dark); }
+  .section-title .kicker { color: var(--gold); text-transform: uppercase; letter-spacing: .08em; font-size: .78rem; font-weight: 700; }
+  .mission-card {
+    background: var(--maroon-light); border-radius: var(--radius); padding: 1.75rem 2rem;
+    border-left: 4px solid var(--maroon); max-width: 46em; margin: 0 auto;
+  }
+  .mission-card p { color: var(--ink); font-style: italic; margin: 0; text-align: center; }
+  .hours-leadership { display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem; }
+  .card {
+    border: 1px solid #e3e6e4; border-radius: var(--radius); padding: 1.6rem 1.75rem; background: #fafbfa;
+  }
+  .card h3 { color: var(--maroon-dark); font-size: 1.05rem; margin-bottom: .6rem; }
+  .hours-list { list-style: none; margin: 0; padding: 0; font-size: .95rem; }
+  .hours-list li { display: flex; justify-content: space-between; padding: .3rem 0; border-bottom: 1px dashed #e3e6e4; }
+  .hours-list li:last-child { border-bottom: none; }
+  .leader-row { display: flex; align-items: center; gap: .9rem; margin-bottom: .9rem; }
+  .leader-row:last-child { margin-bottom: 0; }
+  .leader-photo {
+    width: 46px; height: 46px; border-radius: 50%; background: var(--maroon);
+    color: #fff; display: flex; align-items: center; justify-content: center;
+    font-family: Georgia, serif; font-size: .85rem; font-weight: 700; flex: none;
+  }
+  .leader-info .name { font-weight: 700; font-size: .95rem; }
+  .leader-info .role { color: var(--muted); font-size: .85rem; }
+  .sponsor-card {
+    border: 1px solid #e3e6e4; border-radius: var(--radius); padding: 2rem; text-align: center;
+    background: #fafbfa; max-width: 46em; margin: 0 auto;
+  }
+  .sponsor-card h3 { color: var(--maroon-dark); }
+  .sponsor-card p { color: var(--muted); max-width: 34em; margin: .5rem auto 0; }
+  .cta-band { background: var(--maroon); color: #fff; text-align: center; padding: 2.8rem 0; }
+  .cta-band h2 { font-size: 1.7rem; margin-bottom: .5rem; }
+  .cta-band .cta-row { display: flex; gap: 1rem; justify-content: center; margin-top: 1.4rem; flex-wrap: wrap; }
+  footer.site { background: var(--maroon-dark); color: #e9d3d1; padding: 2.3rem 0 1.4rem; font-size: .88rem; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; margin-bottom: 1.4rem; }
+  .footer-grid h4 { color: #fff; font-size: .88rem; margin-bottom: .55rem; }
+  .footer-grid a { color: #e9d3d1; text-decoration: none; display: block; margin-bottom: .35rem; }
+  .footer-grid a:hover { color: #fff; text-decoration: underline; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,.15); padding-top: .9rem; text-align: center; color: #cda9a6; font-size: .78rem; }
+  @media (max-width: 820px) {
+    .hours-leadership { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    nav.primary { display: none; width: 100%; }
+    .nav-toggle:checked ~ nav.primary { display: block; }
+    .nav-toggle:checked ~ nav.primary ul { flex-direction: column; gap: .25rem; padding: 1rem 0; }
+    .hamburger { display: inline-block; }
+    .nav-row { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site">
+  <div class="wrap nav-row">
+    <a class="brand" href="#top" aria-label="Martin County Historical Society home">
+      <span class="brand-mark" aria-hidden="true">MCHS</span>
+      Martin Co. Historical Society
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+    <label for="nav-toggle" class="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">&#9776;</label>
+    <nav class="primary" aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#visit">Visit</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="donate-btn" href="#donate">Donate Now</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap">
+      <h1>Martin County Historical Society & Museum</h1>
+      <p class="sub">Preserving Martin County history for generations to come — housed in the restored county courthouse-turned-museum in Shoals, Indiana.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#visit">Plan Your Visit</a>
+        <a class="btn btn-outline" href="#contact">Get Involved</a>
+      </div>
+    </div>
+  </section>
+  <div class="status-band">
+    <div class="wrap">
+      <strong>The museum is open.</strong> See current hours below — updated 2026, one line, no conflicting listings.
+    </div>
+  </div>
+  <section id="about">
+    <div class="wrap">
+      <div class="section-title">
+        <div class="kicker">Our Mission</div>
+        <h2>Preserving Martin County history</h2>
+      </div>
+      <div class="mission-card">
+        <p>&ldquo;We seek to preserve Martin County history for generations to come and to inspire historical appreciation across age groups, as we work to restore our courthouse-turned-museum.&rdquo;</p>
+      </div>
+    </div>
+  </section>
+  <section id="visit" style="background: var(--maroon-light);">
+    <div class="wrap">
+      <div class="section-title">
+        <div class="kicker">Plan Your Visit</div>
+        <h2>Hours & Leadership</h2>
+      </div>
+      <div class="hours-leadership">
+        <div class="card">
+          <h3>Museum Hours (May&ndash;October)</h3>
+          <ul class="hours-list">
+            <li><span>Wednesday</span><span>10 AM&ndash;2 PM</span></li>
+            <li><span>Friday</span><span>10 AM&ndash;2 PM</span></li>
+            <li><span>Saturday</span><span>10 AM&ndash;2 PM</span></li>
+          </ul>
+          <p style="font-size:.82rem; color:var(--muted); margin-top:.8rem;">One hours listing, not two conflicting ones. Society to confirm May&ndash;October vs. May&ndash;November before this goes live.</p>
+        </div>
+        <div class="card">
+          <h3>2026&ndash;2027 Leadership</h3>
+          <div class="leader-row">
+            <div class="leader-photo" aria-hidden="true">BG</div>
+            <div class="leader-info"><div class="name">Bill Greene</div><div class="role">President</div></div>
+          </div>
+          <div class="leader-row">
+            <div class="leader-photo" aria-hidden="true">LH</div>
+            <div class="leader-info"><div class="name">Lisa Hendrixson</div><div class="role">Vice President</div></div>
+          </div>
+          <div class="leader-row">
+            <div class="leader-photo" aria-hidden="true">?</div>
+            <div class="leader-info"><div class="name">Treasurer & Secretary &mdash; name on file with the Society</div><div class="role">To be supplied</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="leadership">
+    <div class="wrap">
+      <div class="section-title">
+        <div class="kicker">Staff</div>
+        <h2>Museum Director & County Historian</h2>
+      </div>
+      <div class="hours-leadership">
+        <div class="card">
+          <div class="leader-row">
+            <div class="leader-photo" aria-hidden="true">RB</div>
+            <div class="leader-info"><div class="name">Rick Bowling</div><div class="role">2026&ndash;2027 Museum Director</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="leader-row">
+            <div class="leader-photo" aria-hidden="true">MW</div>
+            <div class="leader-info"><div class="name">Mary Wildman</div><div class="role">Martin County Historian</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section style="background: var(--maroon-light);">
+    <div class="wrap">
+      <div class="sponsor-card">
+        <h3>Thank You to Our Corporate Sponsors</h3>
+        <p>Featured organization: Old National Bank, Loogootee. Thank you to all the businesses and organizations whose support helps defray the cost of our newsletters and website.</p>
+      </div>
+    </div>
+  </section>
+  <div class="cta-band" id="donate">
+    <div class="wrap">
+      <h2>Help us restore the museum</h2>
+      <p>All donations are tax deductible to the fullest extent of the law and fund our mission to preserve Martin County history.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#">Donate Now</a>
+        <a class="btn btn-outline" href="#contact">Volunteer</a>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="site" id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Martin County Historical Society</h4>
+        <p style="max-width: 32em; color: #d9bab7;">A 501(c)(3) nonprofit, entirely volunteer-operated, housed in the Martin County courthouse-turned-museum in Shoals, Indiana.</p>
+      </div>
+      <div>
+        <h4>Visit Us</h4>
+        <a href="tel:+18122471133">(812) 247-1133</a>
+        <a href="#">220 Capital Street, Shoals, IN 47581</a>
+        <a href="#">Contact form</a>
+      </div>
+      <div>
+        <h4>Get Involved</h4>
+        <a href="#">Membership & Volunteering</a>
+        <a href="#">Sponsors</a>
+        <a href="#">Photo Gallery</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Martin County Historical Society. All rights reserved. &mdash; Concept rebuild for review purposes; not a live site.
+    </div>
+  </div>
+</footer>
+</body>
+</html>
