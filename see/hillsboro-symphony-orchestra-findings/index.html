@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hillsboro Symphony Orchestra — Public Accessibility Findings</title>
+<style>
+  body{font-family:-apple-system,Helvetica,Arial,sans-serif;max-width:640px;margin:40px auto;color:#222;line-height:1.55;padding:0 1.25rem}
+  .tag{display:inline-block;font-size:12px;letter-spacing:.05em;text-transform:uppercase;
+       background:#eef3f7;color:#2b5a7a;padding:3px 8px;border-radius:3px;margin-bottom:12px}
+  table{width:100%;border-collapse:collapse;margin:16px 0}
+  td,th{border-bottom:1px solid #ddd;padding:8px 6px;text-align:left;font-size:14px}
+  th{font-size:12px;text-transform:uppercase;color:#555}
+  .note{font-size:13px;color:#555;background:#f7f7f5;padding:10px 14px;border-radius:4px;margin-top:18px}
+  .cta{display:inline-block;margin-top:16px;padding:8px 16px;background:#2b5a7a;color:#fff;
+       text-decoration:none;border-radius:4px;font-size:14px}
+  .source{font-size:12px;color:#777;margin-top:30px;border-top:1px solid #e3e6e4;padding-top:10px}
+</style>
+</head>
+<body>
+  <span class="tag">Findings, not a claim of a breach</span>
+  <h1>What's reachable at members.hillsborosymphony.org without a login</h1>
+  <p>Confirmed by direct, unauthenticated fetch (status-code check only &mdash; re-checked 2026-11-01). This page describes
+  categories of what we found &mdash; we are not reproducing the actual contents here or
+  anywhere else.</p>
+
+  <table>
+    <tr><th>Category</th><th>What it is</th></tr>
+    <tr><td>Board contact information</td><td>Email addresses for current board members</td></tr>
+    <tr><td>Internal policy document</td><td>The orchestra's conduct policy</td></tr>
+    <tr><td>Operating figure</td><td>A specific rehearsal-cost budget line</td></tr>
+    <tr><td>Internal survey results</td><td>Responses from a member survey</td></tr>
+  </table>
+
+  <p><strong>Recommended next step, not a quote:</strong> either place a login gate on
+  this subdomain, or move the four items above behind one. Either is a 3&ndash;5 day
+  scope at $750&ndash;$1,500; final number depends on which approach the board prefers.</p>
+
+  <div class="note">We have not retained, downloaded, or shared any of the material
+  referenced above. This finding describes an access-control gap, not a confirmed
+  compromise &mdash; we have no evidence anyone besides us has found this page.</div>
+
+  <a class="cta" href="../hillsboro-symphony-orchestra/">&larr; Back to the pitch</a>
+
+  <div class="source">
+    Source: direct, unauthenticated fetch of members.hillsborosymphony.org (first confirmed 2026-09-20; re-checked by status code only, 2026-11-01).
+  </div>
+</body>
+</html>
