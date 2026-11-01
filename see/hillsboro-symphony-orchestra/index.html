@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<title>Hillsboro Symphony Orchestra — A Members Page Anyone Can Open</title>
+<style>
+  :root { --blue:#2b5a7a; --blue-dark:#1d3f57; --blue-light:#eef3f7; --gold:#b8862e; --ink:#1b1f1d; --muted:#565f59; --paper:#fff; --border:#e3e6e4; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:#f6f7f5; line-height:1.6; }
+  .shell { max-width:880px; margin:0 auto; padding:2.5rem 1.5rem 4rem; }
+  .meta-bar { background:var(--blue-dark); color:#dfe8f0; text-align:center; padding:.55rem 1rem; font-size:.82rem; }
+  h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; color:var(--blue-dark); }
+  h1 { font-size:1.9rem; margin-bottom:.2rem; }
+  h2 { font-size:1.35rem; margin-top:2.2rem; border-bottom:2px solid var(--blue-light); padding-bottom:.4rem; }
+  .kicker { color:var(--muted); font-size:.95rem; margin-bottom:1.5rem; }
+  .issue,.feature { background:var(--paper); border:1px solid var(--border); border-radius:8px; padding:1.1rem 1.3rem; margin:.9rem 0; position:relative; }
+  .issue-impact { display:inline-block; font-size:.7rem; font-weight:700; letter-spacing:.05em; padding:.15rem .5rem; border-radius:4px; margin-bottom:.4rem; }
+  .impact-high { background:#fdecea; color:#a33; }
+  .impact-medium { background:#fff6e0; color:#966b0a; }
+  .offer-box { background:var(--paper); border:1px solid var(--border); border-radius:8px; padding:1.2rem 1.4rem; margin:1.2rem 0; }
+  .not-claiming { background:#fff8ec; border:1px solid #edd9a3; border-radius:8px; padding:1rem 1.25rem; font-size:.92rem; margin:1.3rem 0; }
+  .evidence-box { background:var(--blue-light); border-left:4px solid var(--blue); padding:1rem 1.25rem; border-radius:6px; font-size:.92rem; margin:1.3rem 0; }
+  .pricing { display:grid; grid-template-columns:1fr; gap:1rem; margin:1.2rem 0; max-width:360px; }
+  .price-card { background:var(--paper); border:1px solid var(--border); border-radius:10px; padding:1.4rem; }
+  .price-card.popular { border-color:var(--gold); box-shadow:0 0 0 2px var(--gold) inset; }
+  .price-card .price { font-family:Georgia,serif; font-size:1.8rem; color:var(--blue-dark); font-weight:700; margin:.3rem 0; }
+  .price-card ul { padding-left:1.1rem; font-size:.9rem; color:var(--muted); }
+  .rebuild-cta { background:var(--blue-dark); color:#fff; border-radius:10px; padding:1.4rem 1.6rem; text-align:center; margin-top:1.6rem; }
+  .rebuild-cta a { display:inline-block; margin-top:.8rem; background:var(--gold); color:#1b1f1d; font-weight:700; text-decoration:none; padding:.7rem 1.5rem; border-radius:999px; }
+  ul.tight li { margin-bottom:.4rem; }
+</style>
+</head>
+<body>
+<div class="meta-bar">Prepared by Risen Digital for Hillsboro Symphony Orchestra</div>
+<div class="shell">
+  <h1>Your Members Page Doesn&#039;t Require a Login</h1>
+  <p class="kicker">A small, scoped fix for Hillsboro Symphony Orchestra: members.hillsborosymphony.org loads in full for anyone with the URL, no sign-in required.</p>
+
+  <h2>What We Found</h2>
+  <p class="kicker">A quick, honest look at members.hillsborosymphony.org as it stands today</p>
+
+  <div class="issue">
+    <div class="issue-impact impact-high">HIGH</div>
+    <h3>No Login Gate on the Members Subdomain</h3>
+    <p>A direct, unauthenticated fetch of members.hillsborosymphony.org loads the page in full &mdash; no username, no password, no session. We re-checked this ourselves today (2026-11-01) with a status-code check only; we have not opened, saved, or retained any of the material on the page.</p>
+  </div>
+  <div class="issue">
+    <div class="issue-impact impact-medium">MEDIUM</div>
+    <h3>Several Categories of Material Sit Behind That Same Open Door</h3>
+    <p>We are deliberately not listing specifics here &mdash; see the findings note below for exact categories, with nothing reproduced. The short version: this is board- and member-facing material that should require a login, and currently doesn&#039;t.</p>
+  </div>
+
+  <h2>A Fix Scoped to the Actual Problem</h2>
+  <p class="kicker">Not a redesign &mdash; an access-control cleanup on one subdomain</p>
+
+  <div class="feature">
+    <h3>One of Two Straightforward Approaches</h3>
+    <p>Either a proper login gate on the subdomain itself, or moving the sensitive items behind one. We&#039;d scope the exact approach with the board once we know which fits how the page is used today.</p>
+  </div>
+  <div class="feature">
+    <h3>Fast, Because the Scope Is Small</h3>
+    <p>This is an access-control fix on one subdomain, not a rebuild or a security audit of the rest of the site.</p>
+  </div>
+
+  <h2>Scope, Timeline &amp; Price</h2>
+  <p class="kicker">A single, well-defined correction &mdash; not an open-ended engagement</p>
+  <div class="offer-box">
+    <p><strong>Timeline:</strong> 3&ndash;5 days from a signed scope to a gated or relocated page</p>
+    <ul class="tight"><li>Login gate added to the subdomain, or the sensitive items moved behind one</li><li>No other content, pages, or services touched</li></ul>
+  </div>
+  <div class="pricing">
+    <div class="price-card popular">
+      <h3>Access-Control Cleanup</h3>
+      <div class="price">$750&ndash;$1,500</div>
+      <p>Final number depends on which approach the board prefers</p>
+      <ul><li>Members subdomain no longer reachable without a login</li><li>No redesign, no broader audit</li></ul>
+    </div>
+  </div>
+
+  <div class="not-claiming">
+    <strong>What we are not claiming:</strong>
+    <ul class="tight"><li>We are not claiming a breach, a hack, or that anyone malicious has found this page.</li><li>We have not downloaded, saved, forwarded, or otherwise retained any of the material we found.</li><li>We don&#039;t know how long the subdomain has been in this state, who built it, or why &mdash; and we don&#039;t guess.</li></ul>
+  </div>
+
+  <div class="evidence-box">
+    <strong>Why us:</strong>
+    <ul class="tight"><li>This is the same category of small, scoped access-control fix we&#039;ve proposed for other small-staff arts and nonprofit organizations.</li><li>We build and run our own company on the same kind of software we&#039;re proposing here, so this isn&#039;t a pitch for something we haven&#039;t done ourselves.</li></ul>
+  </div>
+
+  <div class="rebuild-cta">
+    <div>See the findings one-pager &mdash; categories of what&#039;s reachable today, with nothing reproduced.</div>
+    <a href="../hillsboro-symphony-orchestra-findings/">Open the findings one-pager &rarr;</a>
+  </div>
+</div>
+</body>
+</html>
