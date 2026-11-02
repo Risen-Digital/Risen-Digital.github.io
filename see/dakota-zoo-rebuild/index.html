@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dakota Zoo — Bismarck, ND</title>
+<style>
+  :root {
+    --ink-black: #1f2e1a;
+    --ink: #232323;
+    --muted: #666;
+    --accent: #3f7d3a;
+    --accent-light: #e9f3e6;
+    --paper: #ffffff;
+    --wash: #faf9f5;
+    --border: #e2e2e2;
+    --radius: 10px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.55;
+  }
+  h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; margin: 0 0 .4em; line-height: 1.15; }
+  a { color: var(--accent); }
+  img, svg { max-width: 100%; }
+  .skip-link {
+    position: absolute; left: -999px; top: 0; background: var(--accent); color: #fff;
+    padding: .6em 1em; z-index: 100;
+  }
+  .skip-link:focus { left: 0; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.25rem; }
+  header.site {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--paper);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-row { display: flex; align-items: center; justify-content: space-between; padding: .75rem 0; }
+  .brand { display: flex; align-items: center; gap: .6rem; font-family: Georgia, serif; font-weight: 700; font-size: 1.05rem; color: var(--ink-black); text-decoration: none; letter-spacing: .02em; }
+  .brand-mark {
+    width: 40px; height: 40px; border-radius: 50%; background: var(--ink-black);
+    color: #fff; display: flex; align-items: center; justify-content: center;
+    font-family: Georgia, serif; font-weight: 700; font-size: .62rem; flex: none;
+  }
+  nav.primary ul { list-style: none; display: flex; gap: 1.3rem; margin: 0; padding: 0; flex-wrap: wrap; }
+  nav.primary a { text-decoration: none; color: var(--ink); font-size: .88rem; font-weight: 600; text-transform: uppercase; letter-spacing: .03em; }
+  nav.primary a:hover, nav.primary a:focus { color: var(--accent); text-decoration: underline; }
+  .cta-btn {
+    background: var(--accent); color: #fff !important; padding: .5rem 1.1rem; border-radius: 999px;
+    font-weight: 700; text-decoration: none !important; font-size: .82rem; text-transform: uppercase; letter-spacing: .03em;
+  }
+  .nav-toggle { display: none; }
+  .hamburger {
+    display: none; background: none; border: 1px solid var(--ink-black); border-radius: 6px;
+    padding: .4rem .6rem; font-size: 1.1rem; color: var(--ink-black); cursor: pointer;
+  }
+  .hero {
+    background: var(--ink-black);
+    color: #fff; padding: 4.4rem 0 3.4rem; text-align: center;
+  }
+  .hero .kicker-line { color: #bcd9b5; text-transform: uppercase; letter-spacing: .12em; font-size: .8rem; font-weight: 700; margin-bottom: .8rem; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.1rem); margin-bottom: .5rem; }
+  .hero p.sub { font-size: 1.15rem; color: #dbe6d8; max-width: 40em; margin: 0 auto 1.8rem; }
+  .hero .cta-row { display: flex; gap: .9rem; justify-content: center; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: .7rem 1.5rem; border-radius: 999px; font-weight: 700; text-decoration: none; font-size: .88rem; text-transform: uppercase; letter-spacing: .03em; }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-outline { border: 2px solid #fff; color: #fff; }
+  .btn-outline:hover { background: rgba(255,255,255,.12); }
+  .stats-band { background: var(--accent); padding: 1.6rem 0; }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; text-align: center; color: #fff; }
+  .stats-grid .num { font-family: Georgia, serif; font-size: 1.9rem; font-weight: 700; display: block; }
+  .stats-grid .lbl { font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: #e4efe2; }
+  section { padding: 3.2rem 0; }
+  .section-title { text-align: center; margin-bottom: 1.8rem; }
+  .section-title h2 { font-size: 1.85rem; color: var(--ink-black); }
+  .section-title .kicker { color: var(--accent); text-transform: uppercase; letter-spacing: .1em; font-size: .78rem; font-weight: 700; }
+  .mission-card {
+    background: var(--wash); border-radius: var(--radius); padding: 1.9rem 2.1rem;
+    border-left: 4px solid var(--accent); max-width: 50em; margin: 0 auto;
+  }
+  .mission-card p { color: var(--ink); margin: 0 0 1rem; }
+  .mission-card p:last-child { margin-bottom: 0; }
+  .mission-card .origin { font-size: .9rem; color: var(--muted); }
+  .team-board { display: grid; grid-template-columns: 1fr 1.2fr; gap: 1.9rem; }
+  .card {
+    border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem 1.75rem; background: var(--wash);
+  }
+  .card h3 { color: var(--ink-black); font-size: 1.05rem; margin-bottom: .8rem; }
+  .leader-row { display: flex; align-items: flex-start; gap: .9rem; margin-bottom: 1rem; }
+  .leader-photo {
+    width: 46px; height: 46px; border-radius: 50%; background: var(--accent);
+    color: #fff; display: flex; align-items: center; justify-content: center;
+    font-family: Georgia, serif; font-size: .78rem; font-weight: 700; flex: none;
+  }
+  .leader-info .name { font-weight: 700; font-size: .95rem; }
+  .leader-info .role { color: var(--muted); font-size: .82rem; margin-bottom: .3rem; }
+  .leader-info .contact { font-size: .85rem; }
+  .leader-info .contact a { color: var(--accent); }
+  .hours-list { list-style: none; margin: 0; padding: 0; font-size: .9rem; }
+  .hours-list li { display: flex; justify-content: space-between; padding: .4rem 0; border-bottom: 1px dashed var(--border); }
+  .cta-band { background: var(--ink-black); color: #fff; text-align: center; padding: 2.8rem 0; }
+  .cta-band h2 { font-size: 1.7rem; margin-bottom: .5rem; }
+  .cta-band .cta-row { display: flex; gap: 1rem; justify-content: center; margin-top: 1.4rem; flex-wrap: wrap; }
+  footer.site { background: #182416; color: #ccc; padding: 2.3rem 0 1.4rem; font-size: .86rem; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; margin-bottom: 1.4rem; }
+  .footer-grid h4 { color: #fff; font-size: .86rem; margin-bottom: .55rem; text-transform: uppercase; letter-spacing: .04em; }
+  .footer-grid a { color: #ccc; text-decoration: none; display: block; margin-bottom: .35rem; }
+  .footer-grid a:hover { color: #fff; text-decoration: underline; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,.12); padding-top: .9rem; text-align: center; color: #999; font-size: .76rem; }
+  @media (max-width: 820px) {
+    .team-board { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
+    .footer-grid { grid-template-columns: 1fr; }
+    nav.primary { display: none; width: 100%; }
+    .nav-toggle:checked ~ nav.primary { display: block; }
+    .nav-toggle:checked ~ nav.primary ul { flex-direction: column; gap: .5rem; padding: 1rem 0; }
+    .hamburger { display: inline-block; }
+    .nav-row { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site">
+  <div class="wrap nav-row">
+    <a class="brand" href="#top" aria-label="Dakota Zoo home">
+      <span class="brand-mark" aria-hidden="true">DZ</span>
+      Dakota Zoo
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+    <label for="nav-toggle" class="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">&#9776;</label>
+    <nav class="primary" aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#visit">Plan Your Visit</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="cta-btn" href="#contact">Become a Member</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="kicker-line">Bismarck's Zoo Since 1961</div>
+      <h1>Dakota Zoo</h1>
+      <p class="sub">Join us for our 65th season — a fun-filled schedule of events for people of all ages, home to about 400 animals representing 125 species on 90 acres along the Missouri River.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#visit">Plan Your Visit</a>
+        <a class="btn btn-outline" href="#leadership">Meet the Director</a>
+      </div>
+    </div>
+  </section>
+  <div class="stats-band">
+    <div class="wrap stats-grid">
+      <div><span class="num">1961</span><span class="lbl">Founded</span></div>
+      <div><span class="num">~400</span><span class="lbl">Animals, 125 Species</span></div>
+      <div><span class="num">90</span><span class="lbl">Acres</span></div>
+      <div><span class="num">150K+</span><span class="lbl">Annual Visitors</span></div>
+    </div>
+  </div>
+  <section id="about">
+    <div class="wrap">
+      <div class="section-title">
+        <div class="kicker">Our Story</div>
+        <h2>65 years on the Missouri River</h2>
+      </div>
+      <div class="mission-card">
+        <p>The Dakota Zoo opened to the public on June 3, 1961, with 75 mammals and 23 birds on 15 developed acres — grown from the Marc & Betty Christianson farm, which began as an informal animal refuge. Today the zoo sits on 90 acres, is accredited by the Association of Zoos and Aquariums (since 1991), and is supported by roughly 3,400 member households.</p>
+        <p class="origin">Open seasonally; current winter-season hours are Friday&ndash;Sunday, 1:00&ndash;5:00 PM. Programs include camps, field trips, animal encounters, venue rentals, and signature events like Brew at the Zoo and Zoo Boo.</p>
+      </div>
+    </div>
+  </section>
+  <section style="background: var(--wash);" id="leadership">
+    <div class="wrap">
+      <div class="section-title">
+        <div class="kicker">Who To Contact</div>
+        <h2>Zoo leadership</h2>
+      </div>
+      <div class="team-board">
+        <div class="card">
+          <h3>Director</h3>
+          <div class="leader-row">
+            <div class="leader-photo" aria-hidden="true">JP</div>
+            <div class="leader-info">
+              <div class="name">Jackie Peeler</div>
+              <div class="role">Zoo Director (since May 2026)</div>
+              <div class="contact"><a href="tel:7012237543">(701) 223-7543</a></div>
+            </div>
+          </div>
+          <p style="font-size:.82rem; color:var(--muted); margin:.6rem 0 0;">Every "contact the director" reference on this page points to the zoo's current director — checked the day this page was built.</p>
+        </div>
+        <div class="card" id="visit">
+          <h3>Hours & Visit</h3>
+          <ul class="hours-list">
+            <li><span>Winter Season</span><span>Fri&ndash;Sun, 1&ndash;5 PM</span></li>
+            <li><span>Address</span><span>602 Riverside Park Rd, Bismarck</span></li>
+            <li><span>Phone</span><span>(701) 223-7543</span></li>
+            <li><span>Fax</span><span>(701) 258-8350</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="cta-band" id="contact">
+    <div class="wrap">
+      <h2>Plan a Visit or Support the Zoo</h2>
+      <p>602 Riverside Park Road &middot; Bismarck, ND 58504 &middot; (701) 223-7543</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="tel:7012237543">Call the Zoo</a>
+        <a class="btn btn-outline" href="#top">Back to Top</a>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Dakota Zoo</h4>
+        <p style="max-width: 32em; color: #aaa;">Bismarck, North Dakota's AZA-accredited zoo on the Missouri River, open since 1961.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:7012237543">(701) 223-7543</a>
+        <a href="#">602 Riverside Park Road</a>
+        <a href="#">Bismarck, ND 58504</a>
+      </div>
+      <div>
+        <h4>Get Involved</h4>
+        <a href="#">Zoo Membership</a>
+        <a href="#">Volunteer</a>
+        <a href="#">Endowment & Giving</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Dakota Zoo. All rights reserved. &mdash; Concept rebuild for review purposes; not a live site.
+    </div>
+  </div>
+</footer>
+</body>
+</html>
